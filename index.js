@@ -36,15 +36,15 @@ console.log([...movies].sort(byProperty('runningTimeInMinutes', '<')));
 console.log([...movies].sort(byProperty('movieName', '>'))); 
 // виведе масив фільмів посортованих по назві, в алфавітному порядку
 
+
 function byProperty(property, direction) {
-    if (property ==='releaseYear') {
+    if (direction ==='>') {
 	    return (a, b) => a[property] < b[property] ? -1 : 1;
-    } else if (property ==='runningTimeInMinutes') {
+    } else if (direction ==='<') {
         return (a, b) => a[property] > b[property] ? -1 : 1;
-    } else if (property ==='movieName') {
-        return (a, b) => a[property] < b[property] ? -1 : 1;
     }
 }
+
 
 
 //2. Напишіть функцію-декоратор яка вповільнює виконання довільної функції на вказану кількість секунд.
